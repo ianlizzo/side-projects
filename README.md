@@ -1,2 +1,2 @@
-# side-projects
-Just some small side projects
+# Side Projects
+Just some small side projects!
