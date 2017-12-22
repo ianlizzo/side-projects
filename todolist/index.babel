@@ -1,0 +1,79 @@
+
+class ToDoList extends React.Component {
+  constructor() {
+    super();
+    this.state = {list: []};
+    this.addToList = this.addToList.bind(this);
+    this.deleteToDo = this.deleteToDo.bind(this);
+    
+  }
+  
+  addToList(data) {
+    let list = this.state.list.slice();
+    list.push(data);
+    this.setState({ list: list });
+  }
+  
+   deleteToDo(item) {
+     let list = this.state.list.filter(el => el !== item);
+    this.setState({
+      list: list
+    });
+  }
+
+  render() {
+    let newList = this.state.list; 
+    return (
+      <div>
+        <ul>
+          {newList.map((todo) => {
+            return <li key={todo}>
+              { todo }
+              <button onClick={() => {this.deleteToDo(todo)}}>X</button>
+            </li>
+           })}
+        </ul>
+        <MyComponent addToList={this.addToList}/>
+        
+      </div>
+    );
+  }
+
+}
+
+
+class MyComponent extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      inputValue: ''
+    };
+    this.updateInputValue = this.updateInputValue.bind(this);
+    this.addToDo = this.addToDo.bind(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <input value={this.state.inputValue} onChange={this.updateInputValue}placeholder='e.g. "watch Goblin"'/>
+        <button onClick={this.addToDo}>Submit you noob</button>
+      </div>
+    );
+  }
+
+  updateInputValue(evt) {
+    this.setState({ inputValue: evt.target.value });
+  }
+  
+  addToDo() {
+    this.props.addToList(this.state.inputValue);
+  }
+};
+
+
+
+ReactDOM.render(
+
+  <ToDoList />,
+  document.getElementById('root')
+);
