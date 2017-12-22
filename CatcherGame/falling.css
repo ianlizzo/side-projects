@@ -1,0 +1,39 @@
+canvas {
+    border: solid 1px gray;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 850px;
+    background-image: url(http://www.slate.com/content/dam/slate/blogs/bad_astronomy/2015/10/151027_BA_blue-sky.jpg.CROP.promo-xlarge2.jpg)
+}
+
+h1 {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+table {
+    width: 1024px;
+    table-layout: fixed;
+    margin: auto;
+}
+
+td.edge {
+    width: 20%;
+}
+
+td.points {
+    width: 10%;
+    text-align: center;
+}
+
+td.empty {
+    width: 5%;
+}
