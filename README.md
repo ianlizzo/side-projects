@@ -1,2 +1,3 @@
-# Side Projects
-Just some small side projects!
+# Todolist
+
+A simple To Do List created in ReactJS.
