@@ -1,18 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class Pokeback here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Pokeback extends World
 {
-
-    /**
-     * Constructor for objects of class Pokeback.
-     * 
-     */
 
     int pipeCounter = 0; //ticks of pipes
 
@@ -68,14 +57,16 @@ public class Pokeback extends World
         //randomize lengths from 30 to 120 height
         int offset = Greenfoot.getRandomNumber(120)+30;
         botPipeArray[botIndex] = new bottomPipe();
-        addObject(botPipeArray[botIndex], getWidth(), getHeight() + botPipeArray[botIndex].getImage().getHeight()/2 - offset);
+        addObject(botPipeArray[botIndex], getWidth(), getHeight() + 
+          botPipeArray[botIndex].getImage().getHeight()/2 - offset);
         botIndex++;
 
         // Top Pipe
         //Same thing as bottom pipe
         offset = Greenfoot.getRandomNumber(120)+30;
         topPipeArray[topIndex] = new topPipe();
-        addObject(topPipeArray[topIndex], getWidth(), getHeight() - topPipeArray[topIndex].getImage().getHeight()/2 - 400 + offset);
+        addObject(topPipeArray[topIndex], getWidth(), getHeight() - 
+          topPipeArray[topIndex].getImage().getHeight()/2 - 400 + offset);
         topIndex++;
 
     }
